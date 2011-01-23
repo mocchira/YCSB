@@ -45,6 +45,11 @@
 		<antcall target="dbcompile"/>
 	</target>
 	
+  <target name="dbcompile-zookeeper" depends="compile">
+		<property name="db.dir" value="db/zookeeper"/>
+		<antcall target="dbcompile"/>
+	</target>
+
  	<target name="compile">
         <mkdir dir="${classes.dir}"/>
         <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="build.classpath" deprecation="on">
